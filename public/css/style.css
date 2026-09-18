@@ -1,0 +1,267 @@
+/* ==========================================================
+   STYLE DOKUMEN KEGIATAN BPBD DIY
+   Desain Formal Instansi Pemerintah
+   ========================================================== */
+
+:root {
+    --bpbd-blue: #003366;
+    --bpbd-blue-hover: #002244;
+    --bpbd-accent: #0d6efd;
+    --bpbd-orange: #f37021; /* Aksen oranye khas BPBD/BNPB */
+    --border-color: #000000;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* Navbar styling */
+.navbar-bpbd {
+    background-color: var(--bpbd-blue);
+    border-bottom: 3px solid var(--bpbd-orange);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Document Container */
+.document-container {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 2.5rem 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}
+
+/* Header Dokumen Formal */
+.doc-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.doc-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 0.25rem;
+    letter-spacing: 1px;
+}
+
+.doc-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0;
+}
+
+/* Tabel Kegiatan Formal */
+.table-kegiatan {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+}
+
+.table-kegiatan th,
+.table-kegiatan td {
+    border: 1px solid var(--border-color);
+    padding: 10px 12px;
+    vertical-align: top;
+}
+
+.table-kegiatan th {
+    background-color: #f2f2f2;
+    color: #000000;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* Kolom Alignment */
+.col-no-tgl {
+    width: 55px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.col-hari-tgl {
+    width: 180px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.col-no-keg {
+    width: 45px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.col-kegiatan {
+    text-align: left;
+    line-height: 1.5;
+}
+
+.col-foto {
+    width: 180px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.col-aksi {
+    width: 120px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+/* Thumbnail Foto */
+.foto-thumbnail-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.foto-thumbnail-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.foto-kegiatan {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.foto-empty {
+    color: #6c757d;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+/* Toolbar & Filter */
+.filter-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-bpbd {
+    background-color: var(--bpbd-blue);
+    color: #ffffff;
+    border-color: var(--bpbd-blue);
+}
+
+.btn-bpbd:hover {
+    background-color: var(--bpbd-blue-hover);
+    color: #ffffff;
+    border-color: var(--bpbd-blue-hover);
+}
+
+/* Footer styling */
+.footer-bpbd {
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* ==========================================================
+   PRINT STYLING (@media print)
+   Khusus pencetakan format dokumen resmi pemerintah
+   ========================================================== */
+@media print {
+    /* Sembunyikan elemen navigasi, filter, tombol, dan pagination */
+    .no-print,
+    .navbar,
+    .footer-bpbd,
+    .filter-card,
+    .btn,
+    .pagination-container,
+    .col-aksi,
+    .modal,
+    .alert {
+        display: none !important;
+    }
+
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-family: Arial, sans-serif !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .document-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .table-responsive {
+        overflow: visible !important;
+    }
+
+    .table-kegiatan {
+        width: 100% !important;
+        border: 1px solid #000000 !important;
+        border-collapse: collapse !important;
+    }
+
+    .table-kegiatan th,
+    .table-kegiatan td {
+        border: 1px solid #000000 !important;
+        color: #000000 !important;
+    }
+
+    .table-kegiatan th {
+        background-color: #e9ecef !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .doc-title {
+        font-size: 18pt !important;
+        font-weight: bold !important;
+        color: #000000 !important;
+    }
+
+    .doc-subtitle {
+        font-size: 14pt !important;
+        color: #000000 !important;
+    }
+
+    .foto-kegiatan {
+        width: 130px !important;
+        height: 90px !important;
+        object-fit: cover !important;
+    }
+
+    @page {
+        size: A4 portrait;
+        margin: 1.5cm 1cm 1.5cm 1cm;
+    }
+}
